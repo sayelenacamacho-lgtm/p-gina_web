@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Vídeo explicativo</title>
+</head>
+
+<body>
+
+<video src="video_1.mp4" id="video" width="60%" autoplay="true" controls></video>
+    
+    <br><br>
+    <BUTTON onclick="Velocidad(0)" type="button">pausa</BUTTON>
+    <BUTTON onclick="Velocidad(1)" type="button">play</BUTTON>
+    <BUTTON onclick="Velocidad(0.5)" type="button">x 1/2</BUTTON>
+    <BUTTON onclick="Velocidad(2)" type="button">x 2</BUTTON>
+    <BUTTON onclick="Velocidad(4)" type="button">x 4</BUTTON>
+    
+    <BUTTON onclick="sonido_off()" type="button">sonido_off</BUTTON>
+    <BUTTON onclick="sonido_on()" type="button">sonido_on</BUTTON>
+    
+    <BUTTON onclick="pantalla()" type="button">pantalla completa</BUTTON>
+    <br>
+    <form action="" name="form_vel" onsubmit="leer_vel(); return false">
+    <input type="text" size="4" value="1" name="numero">
+    <input type="submit" value="velocidad">
+    </form>
+    <script>
+    var video=document.getElementById("video");
+    
+        function pantalla()
+        {
+         video.requestFullscreen();
+      }
+        function sonido_off()
+        {
+         video.muted=true;
+      }
+         function sonido_on()
+        {
+         video.muted=false;
+      }
+         function leer_vel()
+        {
+         var vi=form_vel.numero.value;
+            Velocidad(Number(vi));
+      }
+        function Velocidad(v)
+        {
+         video.playbackRate=v;
+      }
+    </script>
+    
+    <br>
+<a href="paginaprincipal.html">⬅ Volver a la página principal</a>
+
+    </body>
+</html>
